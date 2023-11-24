@@ -75,6 +75,21 @@ def test_post_higher(client):
     assert response.json() == {'prediction':'>50K'}
 
 
+def test_post_malformed(client):
+    r = client.post("/", json={
+        "age": 32,
+        "workclass": "Private",
+        "education": "Some-college",
+        "maritalStatus": "ERROR",
+        "occupation": "Exec-managerial",
+        "relationship": "Husband",
+        "race": "Black",
+        "sex": "Male",
+        "hoursPerWeek": 60,
+        "nativeCountry": "United-States"
+    })
+    assert r.status_code == 422
+
 
 
 
