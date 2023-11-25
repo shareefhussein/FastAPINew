@@ -48,3 +48,9 @@ Pipeline pulls data from DVC and execute Flake8 + pytest doing every test.
 
 On Merge [Deploy pipeline](.github/workflows/deploy.yaml) is executed.
 Model is trained, score is checked, data.dvc is then autocommitted and Heroku will be able to automatically build the app.
+
+
+# Github repo
+https://github.com/shareefhussein/build-ml-pipeline-for-short-term-rental-prices/tree/master
+
+# Wandb 
