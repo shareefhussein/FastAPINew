@@ -19,7 +19,7 @@ from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 def get_cat_features():
     """ Return feature categories
     """
-    cat_features = [
+    categorical_features = [
         "workclass",
         "education",
         "marital-status",
@@ -29,7 +29,7 @@ def get_cat_features():
         "sex",
         "native-country",
     ]
-    return cat_features
+    return categorical_features
 
 
 def process_data(

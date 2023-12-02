@@ -7,7 +7,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Literal
 from joblib import load
-import src.all_functions
 import pandas as pd
 import numpy as np
 
@@ -65,9 +64,12 @@ async def greeting():
 @app.post("/")
 async def inference(user_data: User):
 
-    model = load('./model/model.joblib') 
-    encoder = load('./model/encoder.joblib')
-    lb = load('./model/lb.joblib')
+    MODEL_PATH = './model/model.joblib'
+    ENCODER_PATH = './model/encoder.joblib'
+    LAB_PATH = './model/lb.joblib'
+    model = load(MODEL_PATH) 
+    encoder = load(ENCODER_PATH)
+    lb = load(LAB_PATH)
 
 
     array = np.array([[
